@@ -1,0 +1,17 @@
+@import "../../scss/theme/color";
+
+.login-screen {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  &__content {
+    border-radius: 5px;
+    padding: 3rem 2rem;
+    background-color: $white-color;
+  }
+  &__title {
+    text-align: center;
+  }
+}

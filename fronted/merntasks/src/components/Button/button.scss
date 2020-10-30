@@ -1,0 +1,22 @@
+@import "../../scss/theme/color";
+.btn {
+  display: inline-block;
+  padding: 0.6em 1em;
+  background-color: $primary-color;
+  color: $white-color;
+  transition: transform 500ms ease, background-color 500ms ease;
+  cursor: pointer;
+  outline-color: $outline-color;
+  &:hover {
+    background-color: $primary-color-alt;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+  &--rounded {
+    border-radius: 0.3em;
+  }
+  &--fullWidth {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../scss/theme/color";
+.input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: solid 1px $border-color;
+  outline-color: $outline-color;
+  &:focus {
+    border-color: $border-color-alt;
+  }
+  &--rounded {
+    border-radius: 5px;
+  }
+}

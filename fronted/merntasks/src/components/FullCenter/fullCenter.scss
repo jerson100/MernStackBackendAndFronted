@@ -1,0 +1,16 @@
+@import "../../scss/theme/color";
+
+.full-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+  padding: 3rem 0;
+  &--darken {
+    background-color: $dark-color;
+  }
+  &--gray {
+    background-color: $gray-color;
+  }
+}

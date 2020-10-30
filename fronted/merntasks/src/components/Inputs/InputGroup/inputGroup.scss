@@ -1,0 +1,13 @@
+.input-group {
+  margin-bottom: 1.5rem;
+  &--horizont {
+    display: flex;
+    align-items: center;
+    .input-group__label {
+      flex: 0 0 120px;
+    }
+    .input-group__input {
+      flex: 1 0 0;
+    }
+  }
+}

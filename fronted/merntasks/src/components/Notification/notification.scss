@@ -1,0 +1,57 @@
+@import "../../scss/theme/color";
+.notification {
+  display: flex;
+  width: 350px;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  border-radius: 4px;
+  pointer-events: none;
+  margin-bottom: 1rem;
+  &__body {
+    flex: 1 0 0;
+    padding: 20px 28px 24px 20px;
+    background-color: rgba(255, 255, 255, 0.04);
+    display: flex;
+    font-size: 1.2rem;
+  }
+  &__title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    // margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  &__description {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75em;
+  }
+  &__icon {
+    margin-right: 1.3rem;
+  }
+  &__buttons {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn {
+    pointer-events: all;
+    transition: background-color 0.15s ease-in-out;
+    flex: 1;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    outline: 0;
+    border: 0;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    &:not(:first-child) {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  }
+}
