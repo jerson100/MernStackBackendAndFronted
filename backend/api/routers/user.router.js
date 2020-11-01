@@ -80,4 +80,17 @@ EndPoint.get(
   })
 );
 
+EndPoint.get(
+  "/whoIAm",
+  auth,
+  processError(async (req, res) => {
+    const { user: userA } = req.user;
+    const user = await UserController.findOneUser({ _id: userA._id });
+    if (!user) {
+      throw NotFoundUserException();
+    } else {
+      return res.status(200).json({ data: { user } });
+    }
+  })
+);
 module.exports = EndPoint;
