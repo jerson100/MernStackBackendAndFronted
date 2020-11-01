@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import PrivateDashboardRouter from "./PrivateDashboardRouter";
-import PrivateRouter from "./PrivateRouter";
+// import PrivateDashboardRouter from "./PrivateDashboardRouter";
+// import PrivateRouter from "./PrivateRouter";
 import PublicDashboardRouter from "./PublicDashboardRouter";
 import PublicRouter from "./PublicRouter";
 

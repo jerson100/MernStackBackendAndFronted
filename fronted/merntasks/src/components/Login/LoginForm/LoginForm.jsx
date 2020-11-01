@@ -2,9 +2,10 @@ import React from "react";
 import Button from "../../Button/Button";
 import InputGroup from "../../Inputs/InputGroup/InputGroup";
 import useNotification from "../../Notification/useNotification";
+import PropTypes from "prop-types";
 import "./loginForm.scss";
 
-const LoginForm = () => {
+const LoginForm = ({ to }) => {
   const { notify } = useNotification();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ const LoginForm = () => {
       //     alert("Handle more...");
       //   },
     });
+    //si no hay errores llamamos al handleSubmit
   };
   return (
     <form className="login-form" onSubmit={handleSubmit}>
@@ -47,6 +49,14 @@ const LoginForm = () => {
       <a href="#">Obtener Cuenta</a>
     </form>
   );
+};
+
+LoginForm.propTypes = {
+  to: PropTypes.string.isRequired,
+};
+
+LoginForm.defaultProps = {
+  to: "",
 };
 
 export default LoginForm;

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import FullCenter from "../../components/FullCenter/FullCenter";
 import LoginForm from "../../components/Login/LoginForm/LoginForm";
 import NotificationProvider from "../../components/Notification/NotificationProvider";
@@ -11,7 +12,7 @@ const LoginScreen = () => {
         <div className="login-screen">
           <div className="login-screen__content">
             <h1 className="login-screen__title">Inicar Sesión</h1>
-            <LoginForm />
+            <LoginForm to="/" />
           </div>
         </div>
       </FullCenter>
