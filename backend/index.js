@@ -1,6 +1,7 @@
 const express = require("express");
 const { processErrorInDevelopment } = require("./api/middlewares/processError");
 const { connectMongoDB } = require("./api/configs/database");
+const cors = require("cors");
 
 require("dotenv").config();
 
@@ -9,6 +10,8 @@ const app = express();
 connectMongoDB();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use(`/api/${process.env.APIVERSION}/users`, [
   require("./api/routers/user.router"),

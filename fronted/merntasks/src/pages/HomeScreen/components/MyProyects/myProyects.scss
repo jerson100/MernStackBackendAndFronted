@@ -1,0 +1,15 @@
+@import "../../../../scss/theme/color";
+
+.myProyects {
+  //   border: solid 1px blue;
+  padding: 0 1.8rem 1.5rem 1.8rem;
+  &__header {
+    margin-bottom: 4rem;
+  }
+  &__title {
+    text-align: center;
+    color: $primary-color;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+}

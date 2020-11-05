@@ -36,7 +36,7 @@ const authAdmin = (req, res, next) => {
 };
 
 class TokenException extends Error {
-  constructor(message = "El token no es válido", status = 400) {
+  constructor(message = "El token no es válido", status = 401) {
     super(message);
     this.status = status;
     this.name = "TokenException";

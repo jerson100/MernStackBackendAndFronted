@@ -1,2 +1,9 @@
 import axios from "axios";
-import config from "./config";
+
+export const authLogin = async ({ email = "", password = "" }) => {
+  const user = await axios.post("/sessions/current", {
+    email,
+    password,
+  });
+  return user;
+};

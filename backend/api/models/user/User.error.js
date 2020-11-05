@@ -15,7 +15,7 @@ class ExistsEmailUserException extends Error {
 }
 
 class UnauthorizedUserException extends Error {
-  constructor(message = "Usuario o contraseña incorrecto") {
+  constructor(message = "Debe iniciar sesión para acceder a los recursos") {
     super(message);
     this.status = 401;
     this.name = "UnauthorizedUserException";
@@ -40,10 +40,19 @@ class NotFoundUserException extends Error {
   }
 }
 
+class AuthUserException extends Error {
+  constructor(message = "El email o la contraseña son incorrectos...") {
+    super(message);
+    this.status = 400;
+    this.name = "AuthUserException";
+  }
+}
+
 module.exports = {
   CreateUserException,
   ExistsEmailUserException,
   UnauthorizedUserException,
   NotFoundUserException,
   ForbiddenUserException,
+  AuthUserException,
 };

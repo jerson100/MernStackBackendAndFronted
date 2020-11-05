@@ -144,7 +144,6 @@ Notification.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   remove: PropTypes.func.isRequired,
   type: PropTypes.oneOf(["success", "error", "warning"]),
   handleMore: PropTypes.func,

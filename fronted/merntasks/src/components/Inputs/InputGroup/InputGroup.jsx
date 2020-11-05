@@ -26,18 +26,8 @@ const LabelG = (props) => {
   );
 };
 
-const InputG = ({ type, onChange, value, placeholder, id }) => {
-  return (
-    <Input
-      className={"input-group__input"}
-      type={type}
-      onChange={onChange}
-      value={value}
-      rounded
-      id={id}
-      placeholder={placeholder}
-    />
-  );
+const InputG = (props) => {
+  return <Input className={"input-group__input"} rounded {...props} />;
 };
 
 InputGroup.Label = LabelG;

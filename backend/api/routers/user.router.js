@@ -84,7 +84,7 @@ EndPoint.get(
   "/whoIAm",
   auth,
   processError(async (req, res) => {
-    const { user: userA } = req.user;
+    const { user: userA } = req;
     const user = await UserController.findOneUser({ _id: userA._id });
     if (!user) {
       throw NotFoundUserException();

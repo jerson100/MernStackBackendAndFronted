@@ -6,17 +6,16 @@ export const ACTIONS = {
 export const defaultValues = {
   user: {},
   isLogued: false,
-  token: null,
 };
 
 export const authReducer = (state, action) => {
+  //   console.log(action);
   switch (action.type) {
     case ACTIONS.LOGIN:
-      const { user, token } = action.payload;
+      const { user } = action.payload;
       return {
         user,
         isLogued: true,
-        token,
       };
     case ACTIONS.LOGOUT:
       return {

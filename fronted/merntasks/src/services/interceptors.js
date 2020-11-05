@@ -1,9 +1,10 @@
 import CONFIG from "./config";
-import tokenStorage from "../helpers/tokenStorage";
+import Storage from "../helpers/Storage";
+import axios from "axios";
 
 export const initInterceptors = () => {
   axios.interceptors.request.use((req) => {
-    req.headers["Authorization"] = `Bearer ${tokenStorage.get()}`;
+    req.headers["Authorization"] = `Bearer ${Storage.Token.get()}`;
     req.headers["content-type"] = "Application/json";
     req.baseURL = CONFIG.URI;
     return req;
@@ -14,11 +15,15 @@ export const initInterceptors = () => {
       return res;
     },
     (error) => {
+      //   console.log(error.response.status);
       if (error.response.status === 401) {
-        tokenStorage.remove();
-        window.location.href = "/login";
+        Storage.Token.remove();
+        window.location.href = "/auth/login";
       } else {
-        throw error;
+        throw {
+          message: error.response.data.message,
+          status: error.response.status,
+        };
       }
     }
   );

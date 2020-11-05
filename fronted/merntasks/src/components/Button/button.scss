@@ -1,12 +1,13 @@
 @import "../../scss/theme/color";
 .btn {
   display: inline-block;
-  padding: 0.6em 1em;
+  padding: 0.8rem 1rem;
   background-color: $primary-color;
   color: $white-color;
   transition: transform 500ms ease, background-color 500ms ease;
   cursor: pointer;
   outline-color: $outline-color;
+  border-width: 1px;
   &:hover {
     background-color: $primary-color-alt;
   }

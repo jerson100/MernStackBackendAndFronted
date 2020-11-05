@@ -1,0 +1,78 @@
+@import "../../scss/utils/animations";
+
+.loader {
+  display: inline-flex;
+  align-items: center;
+  &__text {
+    animation: opacity 2s 0s infinite linear alternate-reverse;
+  }
+  &--skeleton {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    animation: loaderSkeleton 1.5s infinite linear;
+    height: 15px;
+    background-image: linear-gradient(
+        90deg,
+        rgba(211, 211, 211, 0) 0,
+        #e2e2e2e6 50%,
+        rgba(211, 211, 211, 0) 100%
+      ),
+      linear-gradient(#f1f1f1e6 20px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 40px 100%, 100% 100%;
+    &.loader--s-sm {
+      background-size: 40px 100%, 100% 100%;
+    }
+    &.loader--s-lg {
+      background-size: 650px 100%, 100% 100%;
+    }
+    &.loader--s-xl {
+      background-size: 80px 100%, 100% 100%;
+    }
+    &.loader--s-xxl {
+      background-size: 100px 100%, 100% 100%;
+    }
+  }
+  &--circle {
+    .loader__item {
+      position: relative;
+      border-color: transparent;
+      border-radius: 50%;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent;
+      animation: rot360 500ms 0s infinite linear;
+    }
+    .loader__item--left {
+      margin-right: 0.5rem;
+    }
+    .loader__item--right {
+      margin-left: 0.5rem;
+    }
+  }
+  &--s-sm {
+    .loader__item {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &--s-lg {
+    .loader__item {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &--s-xl {
+    .loader__item {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &--s-xxl {
+    .loader__item {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

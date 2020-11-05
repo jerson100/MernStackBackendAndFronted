@@ -7,7 +7,6 @@ const FullCenter = ({ children, color }) => {
 };
 
 FullCenter.propTypes = {
-  color: PropTypes.string,
   color: PropTypes.oneOf(["darken", "gray"]),
 };
 

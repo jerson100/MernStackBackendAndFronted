@@ -2,37 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./input.scss";
 
-const Input = ({
-  type,
-  rounded,
-  onChange,
-  value,
-  placeholder,
-  id,
-  className,
-}) => {
+const Input = ({ rounded, ...props }) => {
   let name = "input";
   name += rounded ? " input--rounded" : "";
-
-  const handleChange = (e) => {
-    onChange && onChange(e.target.value);
-  };
-
-  return (
-    <input
-      placeholder={placeholder}
-      type={type}
-      value={value}
-      className={`${name} ${className}`}
-      id={id}
-      onChange={handleChange}
-    />
-  );
+  return <input {...props} className={`${name} ${props.className}`} />;
 };
 
 Input.propTypes = {
-  type: PropTypes.string,
-  value: PropTypes.string,
   rounded: PropTypes.bool,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
@@ -41,9 +17,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   rounded: false,
-  onChange: null,
   type: "text",
-  placeholder: "",
   className: "",
 };
 

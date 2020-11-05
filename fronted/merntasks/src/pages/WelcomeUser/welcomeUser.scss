@@ -1,0 +1,8 @@
+@import "../../scss/theme/color";
+.welcome-user {
+  border: solid 1px peru;
+  &__link {
+    text-decoration: none;
+    color: $dark-color;
+  }
+}

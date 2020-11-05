@@ -1,4 +1,4 @@
-import { CONFIG } from "../services/config";
+import CONFIG from "../services/config";
 
 class TokenStorage {
   static add(token) {

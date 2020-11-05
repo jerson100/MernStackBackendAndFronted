@@ -1,0 +1,26 @@
+@keyframes rot360 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loaderSkeleton {
+  from {
+    background-position: -150% 0%, 0% 0%;
+  }
+  to {
+    background-position: 350% 0%, 0% 0%;
+  }
+}
