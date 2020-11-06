@@ -1,16 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useMemo } from "react";
 import md5 from "md5";
 import useAuthContext from "../../../../hooks/useAuthContext";
 import "./bodyHome.scss";
 
-const BodyHome = () => {
+const BodyHome = ({ currentSelectProyect }) => {
   return (
     <div className="body-home">
       <Header />
       <Body />
     </div>
   );
+};
+
+BodyHome.propTypes = {
+  currentSelectProyect: PropTypes.object.isRequired,
 };
 
 const Header = () => {

@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Proyect = require("../models/proyect/Proyect.model");
 
 const findQueryProyect = async (query = {}, proyection = {}) => {
@@ -47,8 +48,8 @@ const updateOneProyect = async (query = {}, data = {}, options = {}) => {
   return await Proyect.updateOne(query, data, options);
 };
 
-const findManyProyectsByIdUser = async (idUser) => {
-  return await findQueryProyect({ user: idUser });
+const findManyProyectsByIdUser = async (idUser, status = true) => {
+  return await findQueryProyect({ user: idUser, status });
 };
 
 module.exports = {

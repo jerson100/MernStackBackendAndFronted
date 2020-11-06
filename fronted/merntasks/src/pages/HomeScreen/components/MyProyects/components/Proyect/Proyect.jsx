@@ -4,11 +4,16 @@ import "./proyect.scss";
 import useProyectContext from "../../../../../../hooks/useProyectContext";
 import proyect from "../../../../../../services/proyect";
 import useNotification from "../../../../../../components/Notification/useNotification";
+import { useState } from "react";
+import FullCenter from "../../../../../../components/FullCenter/FullCenter";
+import Loader from "../../../../../../components/Loader/Loader";
 
 const Proyect = ({ _id, name, selectProyect }) => {
   const { remove } = useProyectContext();
   const { notify } = useNotification();
+  const [loading, setloading] = useState(false);
   const removeProyect = async () => {
+    setloading(true);
     try {
       const resp = await proyect.remove({ _id });
       remove(_id);
@@ -27,17 +32,26 @@ const Proyect = ({ _id, name, selectProyect }) => {
           time: 6000,
         });
       }
+    } finally {
+      setloading(false);
     }
   };
   return (
-    <div className="proyect" onClick={selectProyect}>
-      <div className="proyect__name">
-        {name}{" "}
-        <span className="proyect__close" onClick={() => removeProyect()}>
-          x
-        </span>
+    <>
+      <div className="proyect" onClick={selectProyect}>
+        <div className="proyect__name">
+          {name}{" "}
+          <span className="proyect__close" onClick={() => removeProyect()}>
+            x
+          </span>
+        </div>
       </div>
-    </div>
+      {loading && (
+        <FullCenter fixed color="darkenTransparent">
+          <Loader color="red" size="xxl" />
+        </FullCenter>
+      )}
+    </>
   );
 };
 

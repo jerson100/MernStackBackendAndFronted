@@ -25,6 +25,7 @@ EndPoint.post(
     const findProyect = await ProyectController.findOneQueryProyect({
       name,
       user: user._id,
+      status: true,
     });
     if (findProyect) {
       throw new ExistsProyectException();

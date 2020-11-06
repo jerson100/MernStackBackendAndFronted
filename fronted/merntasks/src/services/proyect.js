@@ -8,8 +8,8 @@ const remove = async ({ _id }) => {
   return await axios.delete(`/proyects/${_id}`);
 };
 
-const all = async () => {
-  return await axios.get("/proyects");
+const all = async (id) => {
+  return await axios.get(`/users/${id}/proyects`);
 };
 
 export default {

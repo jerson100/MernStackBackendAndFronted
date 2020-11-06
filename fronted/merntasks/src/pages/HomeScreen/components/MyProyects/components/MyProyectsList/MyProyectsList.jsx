@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import "./myProyectsList.scss";
 import Loader from "../../../../../../components/Loader/Loader";
 import Proyect from "../Proyect/Proyect";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const MyProyectsList = ({ proyects, loadingProyects, selectProyect }) => {
-  useEffect(() => {
-    console.log("Render my proyect list...");
-  }, []);
+  //   useEffect(() => {
+  //     console.log("Render my proyect list...");
+  //   }, []);
   return (
     <ul className="myProyectsList">
       {loadingProyects ? (

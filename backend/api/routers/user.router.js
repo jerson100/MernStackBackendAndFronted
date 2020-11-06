@@ -70,11 +70,11 @@ EndPoint.get(
   validationSchema(validateObjectIdSchema()),
   processError(async (req, res) => {
     const { user } = req;
-    const { id } = req.params;
-    if (user.typeUser !== "Administrador" && user._id != id) {
+    const { idUser } = req.params;
+    if (user.typeUser !== "Administrador" && user._id != idUser) {
       throw new ForbiddenUserException();
     } else {
-      const proyects = await ProyectController.findManyProyectsByIdUser(id);
+      const proyects = await ProyectController.findManyProyectsByIdUser(idUser);
       return res.status(200).json({ data: { proyects } });
     }
   })

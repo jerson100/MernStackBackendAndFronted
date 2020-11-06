@@ -6,7 +6,7 @@ import Button from "../../../../../../components/Button/Button";
 import InputGroup from "../../../../../../components/Inputs/InputGroup/InputGroup";
 import useForm from "../../../../../../hooks/useForm";
 
-const AddProyect = () => {
+const AddProyect = ({ handleNewProyect }) => {
   const [loadingCreateProyect, setloadingCreateProyect] = useState(false);
   const { add } = useProyectContext();
   const { notify } = useNotification();
@@ -36,10 +36,12 @@ const AddProyect = () => {
       notify({
         type: "success",
         title: "Ok!",
-        decsription: "Proyecto creado satisfactoriamente.",
+        description: "Proyecto creado satisfactoriamente.",
         time: 5000,
       });
+      setloadingCreateProyect(false);
       resetForm();
+      handleNewProyect();
     } catch (e) {
       //   moficar esto, por ahora validamos si tiene un estado
       //   el error - 500, 400, etc. Solo en esos casos mostramos el mensaje de error.
@@ -53,7 +55,6 @@ const AddProyect = () => {
           time: 5000,
         });
       }
-    } finally {
       setloadingCreateProyect(false);
     }
   };

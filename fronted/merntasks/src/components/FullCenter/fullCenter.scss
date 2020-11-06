@@ -1,4 +1,5 @@
 @import "../../scss/theme/color";
+@import "../../scss/base/variables";
 
 .full-center {
   display: flex;
@@ -10,7 +11,16 @@
   &--darken {
     background-color: $dark-color;
   }
+  &--darkenTransparent {
+    background-color: #29303fad;
+  }
   &--gray {
     background-color: $gray-color;
+  }
+  &--fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: $z-fixed;
   }
 }

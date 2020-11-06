@@ -1,5 +1,6 @@
 import React, { useReducer, createContext, useCallback } from "react";
 import { useEffect } from "react";
+import useAuthContext from "../hooks/useAuthContext";
 import proyectReducer, {
   ACTIONS_PROYECT,
   DEFAULTVALUES_PROYECT,
@@ -9,6 +10,12 @@ import ProyectService from "../services/proyect";
 export const ProyectContext = createContext();
 
 const ProyectProvider = ({ children }) => {
+  const {
+    user: {
+      user: { _id },
+    },
+  } = useAuthContext();
+
   const [{ proyects, loadingInitProyects }, dispatch] = useReducer(
     proyectReducer,
     DEFAULTVALUES_PROYECT
@@ -21,7 +28,7 @@ const ProyectProvider = ({ children }) => {
           data: {
             data: { proyects },
           },
-        } = await ProyectService.all();
+        } = await ProyectService.all(_id);
         dispatch({ type: ACTIONS_PROYECT.ALL, payload: proyects });
       } catch (e) {
         console.log(e);

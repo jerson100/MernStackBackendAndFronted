@@ -7,7 +7,7 @@ const NewProyect = () => {
   const [showNewProyect, setshowNewProyect] = useState(false);
 
   const handleNewProyect = () => {
-    setshowNewProyect(true);
+    setshowNewProyect((prev) => !prev);
   };
   return (
     <div className="new-proyect">
@@ -16,7 +16,7 @@ const NewProyect = () => {
       </Button>
       {showNewProyect && (
         <div className="new-proyect__add">
-          <AddProyect />
+          <AddProyect handleNewProyect={handleNewProyect} />
         </div>
       )}
     </div>
